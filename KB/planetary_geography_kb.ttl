@@ -1,0 +1,341 @@
+@prefix : <http://www.semanticweb.org/hp/ontologies/2023/0/planets-geography-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology> .
+
+<http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology> rdf:type owl:Ontology ;
+                                                                                rdfs:comment "This is an ontology about the geographical features of planets in the solar system." .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#has
+:has rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     rdfs:domain :Planet ;
+     rdfs:range :Feature .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#approval_date
+:approval_date rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Feature ;
+               rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#center_latitude
+:center_latitude rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Feature ;
+                 rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#center_longitude
+:center_longitude rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Feature ;
+                  rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#coordinate_system
+:coordinate_system rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Feature ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#diameter
+:diameter rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Feature ;
+          rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#feature_name
+:feature_name rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :Feature ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Planet ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Albedo_Feature
+:Albedo_Feature rdf:type owl:Class ;
+                rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Catena
+:Catena rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Cavus
+:Cavus rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Chaos
+:Chaos rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Chasma
+:Chasma rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Collis
+:Collis rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Crater
+:Crater rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Dorsum
+:Dorsum rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Earth
+:Earth rdf:type owl:Class ;
+       rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Feature
+:Feature rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Fluctus
+:Fluctus rdf:type owl:Class ;
+         rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Fossa
+:Fossa rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Jupiter
+:Jupiter rdf:type owl:Class ;
+         rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Labes
+:Labes rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Labyrinthus
+:Labyrinthus rdf:type owl:Class ;
+             rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Lingula
+:Lingula rdf:type owl:Class ;
+         rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Macula
+:Macula rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Mars
+:Mars rdf:type owl:Class ;
+      rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Mensa
+:Mensa rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Mercury
+:Mercury rdf:type owl:Class ;
+         rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Mons
+:Mons rdf:type owl:Class ;
+      rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Neptune
+:Neptune rdf:type owl:Class ;
+         rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Palus
+:Palus rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Patera
+:Patera rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Planet
+:Planet rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Planitia
+:Planitia rdf:type owl:Class ;
+          rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Planum
+:Planum rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Rupes
+:Rupes rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Saturn
+:Saturn rdf:type owl:Class ;
+        rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Scopulus
+:Scopulus rdf:type owl:Class ;
+          rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Serpens
+:Serpens rdf:type owl:Class ;
+         rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Sulcus
+:Sulcus rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Terra
+:Terra rdf:type owl:Class ;
+       rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Tholus
+:Tholus rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Unda
+:Unda rdf:type owl:Class ;
+      rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Uranus
+:Uranus rdf:type owl:Class ;
+        rdfs:subClassOf :Planet .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Vallis
+:Vallis rdf:type owl:Class ;
+        rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Vastitas
+:Vastitas rdf:type owl:Class ;
+          rdfs:subClassOf :Feature .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Venus
+:Venus rdf:type owl:Class ;
+       rdfs:subClassOf :Planet .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2023/0/planetary-geography-ontology#Aarna
+:Aarna rdf:type owl:NamedIndividual ,
+                :Crater ,
+                :Mars ;
+       :approval_date "2022-12-16T00:00:00"^^xsd:dateTime ;
+       :center_latitude 338.43 ;
+       :center_longitude 14.70 ;
+       :coordinate_system "Planetocentric, +East, 0 - 360"^^xsd:string ;
+       :diameter 43.00 ;
+       :feature_name "Aarna"^^xsd:string .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Albedo_Feature
+                :Catena
+                :Cavus
+                :Chaos
+                :Chasma
+                :Collis
+                :Crater
+                :Dorsum
+                :Fluctus
+                :Fossa
+                :Labes
+                :Labyrinthus
+                :Lingula
+                :Macula
+                :Mensa
+                :Mons
+                :Palus
+                :Patera
+                :Planitia
+                :Planum
+                :Rupes
+                :Scopulus
+                :Serpens
+                :Sulcus
+                :Terra
+                :Tholus
+                :Unda
+                :Vallis
+                :Vastitas
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Earth
+                :Jupiter
+                :Mars
+                :Mercury
+                :Neptune
+                :Saturn
+                :Uranus
+                :Venus
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
