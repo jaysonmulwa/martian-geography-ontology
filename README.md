@@ -1,2 +1,2 @@
-# planetary-geography-ontology
- Planetary Geography Domain Ontology
+# martian-geography-ontology
+ Martian Geography Domain Ontology
