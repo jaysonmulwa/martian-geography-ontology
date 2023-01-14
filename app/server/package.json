@@ -8,11 +8,13 @@
   },
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@rdfjs/fetch": "^3.1.0",
+    "express": "^4.18.2",
+    "rdf-ext": "^2.1.1",
     "rdf-utils-fs": "^2.3.0",
     "rdflib": "^2.2.21",
+    "sparql-http-client": "^2.4.2",
     "tbbt-ld": "^1.1.0"
   }
 }

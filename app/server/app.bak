@@ -1,0 +1,61 @@
+//import fetch from '@rdfjs/fetch';
+//import SparqlClient from 'sparql-http-client';
+const ParsingClient = require('sparql-http-client/ParsingClient')
+//import SimpleClient from 'sparql-http-client';
+//const res = await fetch('http://localhost:80/test/kb.ttl');
+//const dataset = await res.dataset()
+
+/*for (const quad of dataset) {
+  console.log(`${quad.subject.value} ${quad.predicate.value} ${quad.object.value}`)
+}*/
+
+//const client = new SparqlClient({ endpointUrl: 'http://localhost:80/test/kb.ttl' })
+// const client = new SparqlClient({ endpointUrl: 'http://localhost:80/test/kb.rdf' })
+
+// const stream = await client.query.select(`
+// PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  
+// SELECT DISTINCT ?type
+// WHERE {
+//   ?s a ?type.
+// }`)
+
+// //const stream = await client.query.construct('DESCRIBE <http://www.semanticweb.org/hp/ontologies/2023/0/planets-geography-ontology#Feature>')
+
+// stream.on('data', row => {
+//   console.log(row)
+//   //console.log(row.height.value)
+// })
+
+
+// PREFIX : <http://www.semanticweb.org/hp/ontologies/2023/0/planets-geography-ontology#>
+// PREFIX owl: <http://www.w3.org/2002/07/owl#>
+// PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+// PREFIX xml: <http://www.w3.org/XML/1998/namespace>
+// PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+// PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+
+
+async function parse () {
+  const endpointUrl = 'http://localhost:3030/test/kb.ttl'
+  const query = `
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+  SELECT ?subject ?object
+    WHERE { ?subject rdfs:subClassOf ?object }`
+
+  const client = new ParsingClient({ endpointUrl })
+  const bindings = await client.query.select(query)
+  bindings.forEach(row => 
+    Object.entries(row).forEach(([key, value]) => {
+      console.log(`${key}: ${value.value} (${value.termType})`)
+    })
+  )
+}
+
+parse()
