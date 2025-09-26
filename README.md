@@ -1,5 +1,4 @@
-# martian-geography-ontology
-Martian Geography Domain Ontology
+# Martian Geography Domain Ontology
 
 This project maps key physical features on the surface on Mars and compiles this into a knowledge base.
 
